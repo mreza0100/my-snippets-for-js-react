@@ -1,0 +1,139 @@
+{
+	"Console Log": {
+		"prefix": "ll",
+		"body": "console.log($1)",
+		"description": "Console Log"
+	},
+	"!important": {
+		"prefix": "!important",
+		"body": ["!important"],
+		"description": "!important"
+	},
+	"Get Element By ID": {
+		"prefix": "$get_by_id",
+		"body": "document.getElementById($1)",
+		"description": "Get Element By ID"
+	},
+	"Import Default": {
+		"prefix": "$import_default",
+		"body": "import $2 from '$1'",
+		"description": "Import Default"
+	},
+	"Import from exports": {
+		"prefix": "$import_object",
+		"body": "import { $2 } from '$1'",
+		"description": "Import from exports"
+	},
+	"className": {
+		"prefix": "$className",
+		"body": ["className=\"$1\""],
+		"description": "className"
+	},
+	"react functional stateles component": {
+		"prefix": "$functional_component",
+		"body": [
+			"export default ${2:props} => {",
+			"      ",
+			"      return (",
+			"            ${1:<h1>Hello there from ME</h1>}",
+			"      )",
+			"}"
+		],
+		"description": "react functional stateles component"
+	},
+	"make a styled component": {
+		"prefix": "$styled",
+		"body": [
+			"const $1 = styled.${2|div,span,p,i,button,ul,li,header,main|}(props => {",
+			"      ",
+			"      return {",
+			"            $3",
+			"      }",
+			"})"
+		],
+		"description": "make a styled component"
+	},
+	"getInitialProps": {
+		"prefix": "$getInitialProps",
+		"body": [
+			"${1:yourComponentName}.getInitialProps(ctx => {",
+			"      $2",
+			"})"
+		],
+		"description": "getInitialProps"
+	},
+	"export default": {
+		"prefix": "export_default",
+		"body": ["export default $1"],
+		"description": "export default"
+	},
+	"redux action": {
+		"prefix": "$action",
+		"body": [
+			"export const $1 = payload => (dispatch, getState) => {",
+			"      const { $2 } = payload;",
+			"      dispatch({ type: \"???\", payload: \"???\" });",
+			"};"
+		],
+		"description": "redux action"
+	},
+	"redux reducer": {
+		"prefix": "$reducer",
+		"body": [
+			"export default function (state = $1, action) {",
+			"      switch (action.type) {",
+			"            case ${2:\"???\"}:",
+			"                  return action.payload;",
+			"            case ${3:\"???\"}:",
+			"                  return [action.payload, ...state];",
+			"            default:",
+			"                  return state;",
+			"      }",
+			"}",
+			""
+		],
+		"description": "redux reducer"
+	},
+	"redux dispatch": {
+		"prefix": "$dispatch",
+		"body": ["dispatch({ type: ${1:\"???\"}, payload: ${2:\"???\"} });"],
+		"description": "redux dispatch"
+	},
+	"comment": {
+		"prefix": "$comment",
+		"body": ["/* $1 */"],
+		"description": "comment"
+	},
+	"onClick": {
+		"prefix": "$onClick",
+		"body": ["onClick={($1) => {", "      $2", "}}"],
+		"description": "onClick"
+	},
+	"Yup validation ": {
+		"prefix": "$yup",
+		"body": [
+			"const validation = yup.object({",
+			"      ${1:\"???\"}: yup.string().trim(),",
+			"      ${2:\"???\"}: yup.string().trim(),",
+			"      ${3:\"???\"}: yup.string().trim(),",
+			"});"
+		],
+		"description": "Yup validation "
+	},
+	"Formik": {
+		"prefix": "$formik",
+		"body": [
+			"<Formik initialValues={{}} onSubmit={data => {}} validationSchema={validation}>",
+			"      {({ errors }) => {",
+			"            return (",
+			"                  <Form>",
+			"                        <Field $1 />",
+			"                  </Form>",
+			"            );",
+			"      }}",
+			"</Formik>;",
+			""
+		],
+		"description": "Formik"
+	}
+}
